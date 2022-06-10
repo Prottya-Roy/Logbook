@@ -26,11 +26,6 @@ const User= sequelize.define('user',{
         type: Sequelize.STRING,
         allowNull: false
     },
-    phone_number:{
-        type: Sequelize.STRING,
-        allowNull:true,
-        unique: true
-    },
     blog: {
         type: Sequelize.INTEGER,
         allowNull: true,

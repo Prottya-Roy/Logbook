@@ -7,13 +7,14 @@ exports.addBlog = async (req, res) => {
         const blog = await Blog.create({
             title: req.body.title,
             uploader: req.userId,
-            uploader_name: req.userName,
+            uploader_Name: req.userName,
             body: req.body.body,
-            uploaded_on: new Date().getTime()
+            uploaded_On: new Date().getTime()
         });
         res.status(201).json({id: blog.id});
-    }catch(error){
-        res.status(500).json({message: 'Internal Server Error'});
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({error:"Internal server error"});
     }
 }
 
@@ -30,11 +31,12 @@ exports.getBlogsById = async(req,res)=>{
     const id = req.params.blog;
     try{
         const blog = await Blog.findByPk(id);
+
         if(blog){
             res.status(200).json(blog);
         }
         else{
-            res.status(500).json({message: 'Internal Server Error'});
+            res.status(500).json({message: 'no stories were found'});
         }
     }catch(error){
         res.status(500).json({message: 'Internal Server Error'});
