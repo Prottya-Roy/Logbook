@@ -6,7 +6,7 @@ const checkAuthUploader = require('../middleWares/auth_uploader');
 
 router.get('/',blogController.getAllBlogs);
 router.get('/:blogID',blogController.getBlogsById);
-router.get('/:blogUploader',blogController.getBlogsByUser);
+router.get('/from/:blogUploader',blogController.getBlogsByUser);
 router.post('/',checkAuthJwt,blogController.addBlog);
 router.patch('/:blogEdit',checkAuthJwt,checkAuthUploader,blogController.EditBlog);
 router.delete('/:blogDelete', checkAuthJwt,checkAuthUploader,blogController.deleteBlog);
