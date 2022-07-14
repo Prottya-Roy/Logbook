@@ -50,7 +50,7 @@ exports.EditBlog = async(req,res)=>{
             title: req.body.title,
             body: req.body.body
         }, {where : {id}});
-        res.status(200).json({message: 'Blog Edited and updated successfully !!!'});
+        res.status(204).json({message: 'Blog Edited and updated successfully !!!'});
     }catch(error){
         res.status(500).json({message: 'Internal Server Error'});
     }
