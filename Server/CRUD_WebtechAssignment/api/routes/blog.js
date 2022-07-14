@@ -8,8 +8,8 @@ router.get('/',blogController.getAllBlogs);
 router.get('/:blogID',blogController.getBlogsById);
 router.get('/from/:blogUploader',blogController.getBlogsByUser);
 router.post('/',checkAuthJwt,blogController.addBlog);
-router.patch('/:blogEdit',checkAuthJwt,checkAuthUploader,blogController.EditBlog);
-router.delete('/:blogDelete', checkAuthJwt,checkAuthUploader,blogController.deleteBlog);
+router.patch('/:blog',checkAuthJwt,checkAuthUploader,blogController.EditBlog);
+router.delete('/:blog', checkAuthJwt,checkAuthUploader,blogController.deleteBlog);
 
 
 module.exports = router;

@@ -28,7 +28,7 @@ exports.getAllBlogs = async(req,res)=>{
 }
 
 exports.getBlogsById = async(req,res)=>{
-    const id = req.params.blog;
+    const id = req.params.blogID;
     try{
         const blog = await Blog.findByPk(id);
 
@@ -57,11 +57,11 @@ exports.EditBlog = async(req,res)=>{
 }
 
 exports.getBlogsByUser = async(req,res)=>{
-    const user = req.params.uploader;
+    const user = req.params.blogUploader;
     try{
         const blogs = await Blog.findAll({
             attributes:['id'],
-            where: {user}
+            where: {uploader}
         });
         res.status(200).json(blogs);
     }catch(error){
