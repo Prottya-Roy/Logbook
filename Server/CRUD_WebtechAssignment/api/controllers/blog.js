@@ -57,7 +57,9 @@ exports.EditBlog = async(req,res)=>{
 }
 
 exports.getBlogsByUser = async(req,res)=>{
-    const user = req.params.blogUploader;
+    const uploader = req.params.uploader;
+    console.log(req);
+    console.log(req.params.uploader);
     try{
         const blogs = await Blog.findAll({
             attributes:['id'],
