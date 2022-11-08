@@ -1,5 +1,5 @@
 # WebTech2
-A crud using node.js, react, sql
+A crud Blog aka Logbook website using node.js, react, sql
 
 ### Executing program
 
